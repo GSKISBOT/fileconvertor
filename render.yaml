@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: telegram-bot-dashboard
+    env: python
+    plan: free
+    buildCommand: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+      apt-get update && apt-get install -y tesseract-ocr
+    startCommand: gunicorn web_dashboard:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: WEB_PASSWORD
+        value: admin123
+      - key: FLASK_SECRET_KEY
+        generateValue: true

@@ -1,0 +1,11 @@
+flask
+flask-wtf
+wtforms
+python-telegram-bot
+python-docx
+pypdf2
+pytesseract
+pillow
+googletrans==4.0.0rc1
+psutil
+gunicorn

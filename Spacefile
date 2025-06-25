@@ -1,0 +1,16 @@
+v: 0
+micros:
+  - name: telegram-bot
+    src: .
+    engine: python3.9
+    run: python main.py
+    presets:
+      env:
+        - name: TELEGRAM_BOT_TOKEN
+          description: Bot token from BotFather
+        - name: WEB_PASSWORD  
+          description: Web dashboard password
+          default: admin123
+        - name: FLASK_SECRET_KEY
+          description: Flask secret key
+          default: your-secret-key-here
